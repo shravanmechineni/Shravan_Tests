@@ -13,7 +13,7 @@ default:
         - RND17NewPlatformLandingPageContext
   extensions:
     Behat\MinkExtension:
-      base_url: "https://review:hav3al00k@rnd17-staging.sys.comicrelief.com"
+      base_url: "https://www.rednoseday.com"
       goutte: ~
       selenium2: ~
       browser_name: "$DRUPAL_TI_BEHAT_BROWSER"

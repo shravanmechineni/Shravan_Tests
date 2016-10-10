@@ -23,7 +23,7 @@ echo $ARGS
 
 ## Now run the RND17 tests, we need to manually set some things here 
 ## as Drupal TI isn't used to running two different test suites
-DRUPAL_TI_BEHAT_DIR="./profiles/rnd17/tests/behat"
+DRUPAL_TI_BEHAT_DIR="$HOME"
 cd "$DRUPAL_TI_DRUPAL_DIR"
 cd "$DRUPAL_TI_BEHAT_DIR"
 drupal_ti_replace_behat_vars

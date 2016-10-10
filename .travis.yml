@@ -56,7 +56,7 @@ env:
 
     # === Behat specific variables.
     # This is relative to $TRAVIS_BUILD_DIR
-    - DRUPAL_TI_BEHAT_DIR="."
+    - DRUPAL_TI_BEHAT_DIR="$HOME"
     # This is relative to $TRAVIS_BUILD_DIR
     - DRUPAL_TI_THEME_DIR="./themes/rnd17"
     # These arguments are passed to the bin/behat command.
@@ -121,11 +121,11 @@ install:
 before_script:
   # Check code quality
   # - drupal-ti --include profiles/cr/tests/drupal_ti/scripts/codecheck.sh
-  - drupal-ti --include profiles/rnd17/tests/drupal_ti/scripts/before_script.sh
+  - drupal-ti --include /drupal_ti/scripts/before_script.sh
 
 script:
   # Behat
-  - drupal-ti --include profiles/rnd17/tests/drupal_ti/scripts/script.sh # TODO Create bhat tests
+  - drupal-ti --include /drupal_ti/scripts/script.sh # TODO Create bhat tests
   # Check DB errors
   #- drupal-ti --include profiles/cr/tests/drupal_ti/scripts/dberrors.sh # TODO Resolve file permissions
 
@@ -134,7 +134,7 @@ after_script:
 
 after_success:
   # Deploy to CRAFT (only for the develop branch)
-  - drupal-ti --include profiles/rnd17/tests/drupal_ti/scripts/build.sh
+  - drupal-ti --include /drupal_ti/scripts/build.sh
 
 notifications:
   slack: comicrelief:W1jExvqbSU9Kb3lyavdGHdGD

@@ -66,7 +66,7 @@ env:
     # This is used to setup Xvfb.
     - DRUPAL_TI_BEHAT_SCREENSIZE_COLOR="1280x1024x16"
     # The version of selenium that should be used.
-    - DRUPAL_TI_BEHAT_SELENIUM_VERSION="2.44"
+    - DRUPAL_TI_BEHAT_SELENIUM_VERSION="2.53.1"
     # Set DRUPAL_TI_BEHAT_DRIVER to "selenium" to use "firefox" or "chrome" here.
     - DRUPAL_TI_BEHAT_DRIVER="phantomjs"
     - DRUPAL_TI_BEHAT_BROWSER="firefox"
@@ -107,6 +107,8 @@ before_install:
   # Start Web server sir!
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.53.1.jar"
+  - "java -jar selenium-server-standalone-2.53.1.jar > /dev/null &"
   - sleep 3
   - rvm install 2.1.5
   - composer global config minimum-stability beta

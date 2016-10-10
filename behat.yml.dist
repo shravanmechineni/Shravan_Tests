@@ -19,12 +19,4 @@ default:
       browser_name: "$DRUPAL_TI_BEHAT_BROWSER"
       files_path: './profiles/rnd17/tests/behat'
     Drupal\DrupalExtension:
-      api_driver: "drupal"
       blackbox: ~
-      drush_driver: "drush"
-      drupal:
-        drupal_root: "$DRUPAL_TI_DRUPAL_DIR"
-      drush:
-        root: "$DRUPAL_TI_DRUPAL_DIR"
-      region_map:
-        content: ".layout-content"

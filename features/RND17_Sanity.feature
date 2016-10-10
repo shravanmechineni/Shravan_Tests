@@ -7,7 +7,6 @@ Feature: As a RND17.com QA, I want to do smoke test around critical functionalty
 
   Scenario: Smoke test on rnd17
     Given I am on the homepage
-    And I should see "RND17_HomePage" page header image
     And I should see "RND17_Header_esu" element
     And I should see the link "Fundraise"
     And I should see the link "Schools"

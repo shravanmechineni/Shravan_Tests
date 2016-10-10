@@ -1,0 +1,30 @@
+default:
+  suites:
+    default:
+      contexts:
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - DrupalCRFeatureContext
+        - ReusableContext
+        - ESUContext
+        - SchoolsKitOrderFormContext
+        - RND17NewPlatformLandingPageContext
+  extensions:
+    Behat\MinkExtension:
+      base_url: "https://review:hav3al00k@rnd17-staging.sys.comicrelief.com"
+      goutte: ~
+      selenium2: ~
+      browser_name: "$DRUPAL_TI_BEHAT_BROWSER"
+      files_path: './profiles/rnd17/tests/behat'
+    Drupal\DrupalExtension:
+      api_driver: "drupal"
+      blackbox: ~
+      drush_driver: "drush"
+      drupal:
+        drupal_root: "$DRUPAL_TI_DRUPAL_DIR"
+      drush:
+        root: "$DRUPAL_TI_DRUPAL_DIR"
+      region_map:
+        content: ".layout-content"

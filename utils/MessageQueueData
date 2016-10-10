@@ -1,0 +1,16 @@
+;ESU MQ data Sample
+
+	{"email":"s.mechineni@comicrelief.com","lists":{"general":"general"},"transSource":"RND15_ESU_BannerHome",
+	"transSourceUrl":"http:\/\/rednoseday-test.sys.comicrelief.com\/front001","campaign":"RND15","firstName":" ",
+	"sendEmail":false,"timestamp":1463052787,"transType":"subscribe"}
+
+
+; Schools Pack MQ data Sample
+
+	{"fundraisingKitType":"primary_school_fundraising_pack","title":"mr","firstName":"John","lastName":"Gilchrist","jobTitle":"deputy_head",
+	"email":"daspemail+000025@comicrelieftest.com","establishmentType":"primary_school","phone":"07026298144",
+	"address":{"schoolName":"Etz Chaim School at the Belmont","address1":"89 Middleton Road","address2":"","address3":"","town":"MANCHESTER",
+	"county":"Lancashire","postcode":"M8 4JY","edDirectID":"254671"},"postalList":"yes","tcs":"yes","subscribeList":"yes","campaign":"RND17",
+	"timestamp":1463657553,"transType":"KitOrder","transSourceURL":"https:\/\/rednoseday-test.sys.comicrelief.com\/schools-pack",
+	"transSource":"RND17_Desktop_KIT"}
+	

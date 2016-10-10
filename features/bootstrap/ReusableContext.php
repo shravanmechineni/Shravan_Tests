@@ -146,6 +146,7 @@ class ReusableContext extends WebConnector  implements SnippetAcceptingContext {
 	 */
 	public function iShouldSeeElement($locator)
 	{
+        echo 'URL:'. TestData::$url;
 		PHPUnit_Framework_TestCase::assertTrue($this->isElemetPresentByXpath($locator),'can not see ' . $locator . ' element on the page');
 	}
 	

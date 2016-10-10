@@ -17,6 +17,5 @@ default:
       goutte: ~
       selenium2: ~
       browser_name: "$DRUPAL_TI_BEHAT_BROWSER"
-      files_path: './profiles/rnd17/tests/behat'
     Drupal\DrupalExtension:
       blackbox: ~

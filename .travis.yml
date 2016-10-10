@@ -56,7 +56,7 @@ env:
 
     # === Behat specific variables.
     # This is relative to $TRAVIS_BUILD_DIR
-    - DRUPAL_TI_BEHAT_DIR="$HOME"
+    - DRUPAL_TI_BEHAT_DIR="."
     # This is relative to $TRAVIS_BUILD_DIR
     - DRUPAL_TI_THEME_DIR="./themes/rnd17"
     # These arguments are passed to the bin/behat command.

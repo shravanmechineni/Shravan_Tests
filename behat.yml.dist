@@ -13,7 +13,7 @@ default:
         - RND17NewPlatformLandingPageContext
   extensions:
     Behat\MinkExtension:
-      base_url:  https://www.rednoseday.com
+      base_url:  "$DRUPAL_TI_WEBSERVER_URL:$DRUPAL_TI_WEBSERVER_PORT/"
       goutte: ~
       selenium2: ~
       browser_name: "$DRUPAL_TI_BEHAT_BROWSER"

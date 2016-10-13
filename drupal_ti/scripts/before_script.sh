@@ -24,7 +24,6 @@ mysql -e "create database $DRUPAL_TI_DB"
 echo "Database: "$DRUPAL_TI_DB" created."
 
 # Clear caches and run a web server.
-drupal_ti_clear_caches
 drupal_ti_run_server
 
 # Start xvfb and selenium.

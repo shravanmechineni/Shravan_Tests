@@ -23,24 +23,6 @@ fi
 mysql -e "create database $DRUPAL_TI_DB"
 echo "Database: "$DRUPAL_TI_DB" created."
 
-# Create environment.yml on the fly
-databases:
-  default:
-    default:
-      database: $DRUPAL_TI_DB
-      username: root
-      password:
-      prefix:
-      host: 127.0.0.1
-      port:
-      namespace: Drupal\\Core\\Database\\Driver\\mysql
-      driver: mysql
-
-settings:
-  hash_salt: kzWT4Q5kJe2DkfS72PrATBUfkw54RKzMCbQg933K1Qwe0ZKtonOV_xdmuCac
-EOF
-echo 'File: environment.yml has been created.'
-
 # Clear caches and run a web server.
 drupal_ti_clear_caches
 drupal_ti_run_server

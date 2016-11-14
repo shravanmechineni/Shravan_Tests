@@ -82,6 +82,6 @@ PATCHES.txt
 # profiles/cr/tests/behat/vendor
 # profiles/cr/tests/behat/behat.yml
 /vendor
-/behat.yml
+# /behat.yml
 
 .idea

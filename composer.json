@@ -5,7 +5,8 @@
     "sebastian/phpcpd": "^2.0",
     "phploc/phploc": "^3.0",
     "drupal/drupal-extension": "~3.0",
-    "symfony/dependency-injection": "2.8.0"
+    "symfony/dependency-injection": "2.8.0",
+    "emuse/behat-html-formatter": "0.1.*"
   },
   "require-dev": {
     "pantheon-systems/ci-scripts": "*",

@@ -1,4 +1,4 @@
-@not-on-travis
+@not-on-ci
 Feature: As a RND17.com user, I want to see new Platform page
 
   In order to check the content on RND17 site

@@ -1,0 +1,103 @@
+default:
+  gherkin:
+        filters:
+            tags: '~@not-on-ci'
+  suites:
+    default:
+      contexts:
+        - DrupalCRFeatureContext
+        - ReusableContext
+        - ESUContext
+        - SchoolsKitOrderFormContext
+        - RND17NewPlatformLandingPageContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      default_session: selenium2
+      goutte: 
+         guzzle_parameters:
+          verify: false
+      selenium2:
+        browser: firefox
+      base_url: https://review:hav3al00k@www.rednoseday.com
+    Drupal\DrupalExtension:
+      blackbox: ~
+
+QA_Regression_Profile:
+  gherkin:
+        filters:
+            tags: '@RND17_SchoolsESUStrip_RND38'
+  suites:
+    QA_Regression_Suite:
+      paths:    [ %paths.base%/features ]
+      contexts:
+          - DrupalCRFeatureContext
+          - ReusableContext
+          - ESUContext
+          - SchoolsKitOrderFormContext
+          - RND17NewPlatformLandingPageContext
+          - Drupal\DrupalExtension\Context\DrupalContext
+          - Drupal\DrupalExtension\Context\MinkContext
+          - Drupal\DrupalExtension\Context\MessageContext
+          - Drupal\DrupalExtension\Context\DrushContext
+  formatters:
+    html:
+      output_path: %paths.base%/report
+  extensions:
+    Behat\MinkExtension:
+      default_session: selenium2
+      goutte:
+          guzzle_parameters:
+           verify: false
+      selenium2: ~
+      base_url: https://review:hav3al00k@rnd17-staging.sys.comicrelief.com
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+       name: html
+       renderer: Twig,Behat2
+       file_name: report
+       print_args: true
+       print_outp: true
+       loop_break: true
+    Drupal\DrupalExtension:
+       blackbox: ~
+
+Staging_Regression_Profile:
+  gherkin:
+        filters:
+            tags: '~@not-on-ci'
+  suites:
+    Staging_Regression_Suite:
+      contexts:
+          - DrupalCRFeatureContext
+          - ReusableContext
+          - ESUContext
+          - SchoolsKitOrderFormContext
+          - RND17NewPlatformLandingPageContext
+          - Drupal\DrupalExtension\Context\DrupalContext
+          - Drupal\DrupalExtension\Context\MinkContext
+          - Drupal\DrupalExtension\Context\MessageContext
+          - Drupal\DrupalExtension\Context\DrushContext
+  formatters:
+    html:
+      output_path: %paths.base%/report
+  extensions:
+    Behat\MinkExtension:
+      default_session: selenium2
+      goutte:
+         guzzle_parameters:
+          verify: false
+      selenium2:
+        browser: firefox
+      base_url: https://review:hav3al00k@rnd17-staging.sys.comicrelief.com
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig,Behat2
+      file_name: report
+      print_args: true
+      print_outp: true
+      loop_break: true
+    Drupal\DrupalExtension:
+      blackbox: ~

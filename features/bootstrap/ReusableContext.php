@@ -85,6 +85,16 @@ class ReusableContext extends WebConnector  implements SnippetAcceptingContext {
 	}
 
     /**
+     * @Given I maximise the browser window
+     * @throws \Behat\Mink\Exception\DriverException
+     */
+    public function iMaximiseTheBrowserWindow()
+    {
+        $this->getSession()->getDriver()->maximizeWindow();
+        $this->getSession()->wait(5000);
+    }
+
+    /**
      * @Given I should see :arg1 page header image
      */
     public function iShouldSeeHeaderImage($locator)

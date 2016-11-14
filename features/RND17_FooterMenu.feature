@@ -1,4 +1,4 @@
-@not-on-travis
+@not-on-ci
 Feature: As a RND17.com user, I want to click on footer links of RND17 Site
 
   In order to naviage to footer pages

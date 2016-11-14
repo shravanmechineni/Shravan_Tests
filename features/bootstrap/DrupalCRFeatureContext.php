@@ -186,4 +186,70 @@ class DrupalCRFeatureContext extends RawDrupalContext implements SnippetAcceptin
     return $return;
   }
 
+    /**
+     * @BeforeScenario
+     *
+     * @param BeforeScenarioScope $scope
+     *
+     */
+    public function before($scope)
+    {
+        $this->currentScenario = $scope->getScenario();
+        $sampleData = [];
+    }
+
+    /**
+     * @AfterStep
+     *
+     * @param AfterStepScope $scope
+     */
+    public function afterStep($scope)
+    {
+        //if test has failed, and is not an api test, get screenshot
+        if(!$scope->getTestResult()->isPassed())
+        {
+            //create filename string
+            $featureFolder = str_replace(' ', '', $scope->getFeature()->getTitle());
+
+            $scenarioName = $this->currentScenario->getTitle();
+            $fileName = str_replace(' ', '', $scenarioName) . '.png';
+
+            //create screenshots directory if it doesn't exist
+            if (!file_exists(__DIR__ . '/../../tmp/build/html/behat/assets/screenshots/' . $featureFolder)) {
+                mkdir(__DIR__ . '/../../tmp/build/html/behat/assets/screenshots/' . $featureFolder, null, true);
+            }
+
+            //take screenshot and save as the previously defined filename
+            file_put_contents(__DIR__ . '/../../tmp/build/html/behat/assets/screenshots/' . $featureFolder . '/' . $fileName, $this->getSession()->getDriver()->getScreenshot());
+        }
+    }
+
+    /**
+     * @BeforeSuite
+     */
+    public static function setup($scope)
+    {
+        //Function to delete files and folders from a directory
+        /*function rrmdir($dir) {
+            if (is_dir($dir)) {
+                $objects = scandir($dir);
+                foreach ($objects as $object) {
+                    if ($object != "." && $object != "..") {
+                        if (filetype($dir."/".$object) == "dir")
+                            rrmdir($dir."/".$object);
+                        else unlink   ($dir."/".$object);
+                    }
+                }
+                reset($objects);
+                rmdir($dir);
+            }
+        }
+
+        //Check if screenshots folder exists and delete all files and folders from if
+        if (file_exists(__DIR__ . '/../../tmp/build/html/behat/assets/screenshots/' )) {
+            rrmdir(__DIR__ . '/../../tmp/build/html/behat/assets/screenshots/');
+        }*/
+
+    }
+
 }

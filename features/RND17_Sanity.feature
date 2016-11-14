@@ -6,7 +6,8 @@ Feature: As a RND17.com QA, I want to do smoke test around critical functionalty
   I want to do smoke test
 
   Scenario: Smoke test on rnd17
-    Given I am on "https://www.rednoseday.com"
+    Given I am on " "
+    And I maximise the browser window
     And I should see the link "Fundraise"
     And I should see the link "Schools"
     And I should see the link "The difference you make"

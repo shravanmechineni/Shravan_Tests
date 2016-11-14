@@ -1,4 +1,4 @@
-@not-on-travis
+@not-on-ci
 Feature: As a RND17.com schools teacher, I want to sign up for schools emails via Strip RND-38
   
   IN order to get schools updates

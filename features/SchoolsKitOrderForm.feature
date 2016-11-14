@@ -1,4 +1,4 @@
-@not-on-travis
+@not-on-ci
 Feature: As a RND17 schools fundraiser I want to register for receiving a schools fundraising kit RND-39
   
   As a school receiving the DM
